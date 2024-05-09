@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Signup Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('user.jpg');
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .wrapper{
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 44%;
+	left: 50%;
+	width: 300px;
+}
+        ::placeholder{
+	color: #9a9a9a;
+	font-weight: 400;
+}
+span{
+	position: absolute;
+	right: 15px;
+	transform: translate(0,-50%);
+	top: 50%;
+	cursor: pointer;
+}
+.fa{
+	font-size: 20px;
+	color: #7a797e;
+}
+
+
+        .signup-container {
+            /* Blue form color */
+            color: #fff; /* White text color */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            
+        }
+
+        .login-link {
+            margin-top: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Signup</h2>
+        <form action="user_sign.php" method="post">
+            <input type="text" name="username" placeholder="Username" required>
+            <BR><BR><BR>
+            <div class="wrapper">
+            <input type="Password" name="password" placeholder="Password"id="password"  required>
+            <br>
+            <span>
+			<i class="fa fa-eye" aria-hidden="true" id="eye" onclick="toggle()"></i>
+		</span>
+              </div>
+              
+              <BR>
+                           <input type="password" name="confirm_password" placeholder="Confirm Password" id= "confirm password"required>
+             
+            
+            <input type="tel" name="phonenumber" placeholder="Phone Number" required>
+            <br>
+            <input type="submit" value="Signup">
+        </form>
+        <div class="login-link">
+            <p>Already registered? <a href="user_login.php">Login</a></p>
+        </div>
+    </div>
+</body>
+<script>
+		var state= false;
+		function toggle(){
+			if(state){
+				document.getElementById("password").setAttribute("type","password");
+				document.getElementById("eye").style.color='#7a797e';
+				state = false;
+			}
+			else{
+				document.getElementById("password").setAttribute("type","text");
+				document.getElementById("eye").style.color='#5887ef';
+				state = true;
+			}
+		}
+        </script>
+
+</html>
